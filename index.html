@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html lang="th">
+<head>
+<title>คนจำนวนสามคน</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+header {
+  background-color: #d0d9ff;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+nav {
+  float: left;
+  width: 20%;
+  height: 350px; 
+  background: #91a7ff;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  margin-bottom: 12px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  padding: 5px;
+}
+
+nav ul li a:hover {
+  color: #4A90E2;
+  background-color: #e1e8ed;
+  border-radius: 4px;
+}
+
+
+.content-wrapper {
+  float: left;
+  width: 80%;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 68.75%; /* ปรับสัดส่วนให้เข้ากับ wrapper 80% */
+  background-color: #f9f9f9;
+  height: 350px; 
+  text-align: center;
+}
+
+.friend-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #4A90E2;
+}
+
+aside {
+  float: left;
+  padding: 20px;
+  width: 31.25%; /* ปรับสัดส่วนให้เข้ากับ wrapper 80% */
+  background-color: #e1e8ed;
+  height: 350px; 
+}
+
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+footer {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+
+#friend-box-2, #friend-box-3 {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  nav, .content-wrapper, article, aside {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+  <header>
+    <h2>รายชื่อเพื่อน</h2>
+  </header>
+
+  <section>
+    
+    <nav>
+      <h3>รายชื่อเพื่อน</h3>
+      <ul>
+        <li><a onclick="showFriend(1)">แอป</a></li>
+        <li><a onclick="showFriend(2)">ดรีม</a></li>
+        <li><a onclick="showFriend(3)">เนส</a></li>
+      </ul>
+    </nav>
+    
+    <div class="content-wrapper">
+      
+      <div id="friend-box-1">
+        <article>
+          <img src="ss.jpg" alt="สิริภาภรณ์" width="400" height="200">
+          <h1>สิริภาภรณ์ เสนาทิพย์</h1>
+          <p>สิริเป็นเพื่อนที่หน้าตาน่ารัก ตัวเล็ก ชวนคุยเก่ง รักเพื่อนๆ มีรอยยิ้มที่สวยงาม</p>
+        </article>
+        <aside>
+          <h3>ข้อมูลเพิ่มเติม</h3>
+          <p><strong><span style='font-size:100px;'>&#128103;</span></strong>อย่าให้โมโห</p>
+        </aside>
+      </div>
+
+      <div id="friend-box-2">
+        <article>
+         <img src="dd.jpg" alt="วิมลณัฐ" width="400" height="200">
+          <h1>วิมลณัฐ สายแสง</h1>
+          <p>เป็นคนลุยๆ เฟรนลี่  เป็นสีสันของกลุ่มที่ขาดไม่ได้เลย ไปไหนไปกันเสมอ</p>
+        </article>
+        <aside>
+          <h3>ข้อมูลเพิ่มเติม</h3>
+          <p><strong><span style='font-size:100px;'>&#128250;</span></strong>รักแฟนที่สุดในโลก</p>
+        </aside>
+      </div>
+
+      <div id="friend-box-3">
+        <article>
+           <img src="nn.jpg" alt="มณีรัช ฐานะ" width="400" height="200">
+          <h1>มณีรัช ฐานะ</h1>
+          <p>เป็นคนใจดีตลก</p>
+        </article>
+        <aside>
+          <h3>ข้อมูลเพิ่มเติม</h3>
+          <p><strong><span style='font-size:100px;'>&#128302;</span>
+</strong>หัวเราะทั้งวัน</p>
+        </aside>
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    <p> By ปอลอ &copy; 2026</p>
+  </footer>
+
+  <script>
+    function showFriend(friendNumber) {
+
+      document.getElementById('friend-box-1').style.display = 'none';
+      document.getElementById('friend-box-2').style.display = 'none';
+      document.getElementById('friend-box-3').style.display = 'none';
+      
+
+      document.getElementById('friend-box-' + friendNumber).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
